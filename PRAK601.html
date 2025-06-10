@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPhotography</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background: #fff;
+        }
+        
+        body::before { content: ''; position: fixed; top: 20px; left: 20px; width: 40px; height: 40px; border: 8px solid #000; border-right: none; border-bottom: none; z-index: 999; }
+        body::after { content: ''; position: fixed; top: 20px; right: 20px; width: 40px; height: 40px; border: 8px solid #000; border-left: none; border-bottom: none; z-index: 999; }
+        .corner-bottom::before { content: ''; position: fixed; bottom: 20px; left: 20px; width: 40px; height: 40px; border: 8px solid #000; border-right: none; border-top: none; z-index: 999; }
+        .corner-bottom::after { content: ''; position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; border: 8px solid #000; border-left: none; border-top: none; z-index: 999; }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .logo { font-weight: 700; font-size: 1.5rem; color: #000; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { color: #000; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav a:hover { color: #666; }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+        .hero h1 { font-weight: 700; font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero h2 { font-weight: 600; font-size: 1.8rem; margin-bottom: 1rem; }
+        .hero .subtitle { letter-spacing: 3px; color: #666; font-size: 0.8rem; text-transform: uppercase; }
+        
+        .filters {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+        .filter-btn {
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            padding: 8px 20px;
+            margin: 0 5px;
+            background: transparent;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active { background: #000; color: #fff; border-color: #000; }
+        
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.02); }
+        
+        .footer {
+            text-align: center;
+            padding: 3rem 1rem 4rem;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 2rem;
+        }
+        .footer h3 { font-weight: 700; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .footer p { color: #666; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .social i { font-size: 1.2rem; margin: 0 8px; color: #666; transition: color 0.3s; }
+        .social i:hover { color: #000; }
+        
+        @media (max-width: 768px) {
+            .header { flex-direction: column; gap: 1rem; padding: 1rem 2rem; }
+            .nav { gap: 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero h2 { font-size: 1.4rem; }
+            .hero { padding: 2rem 1rem 1rem; }
+            .gallery { grid-template-columns: repeat(2, 1fr); padding: 0 1rem 2rem; }
+            body::before, body::after, .corner-bottom::before, .corner-bottom::after { width: 30px; height: 30px; border-width: 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="corner-bottom"></div>
+    
+    <header class="header">
+        <div class="logo">JPhotography</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About Me</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Hi. Hello.. I Am JohnDas...!</h1>
+        <h2>I Travel Around The World To Get The Best Photos.!</h2>
+        <p class="subtitle">Award Winning Photographer / Cinematographer / Writer</p>
+    </section>
+
+    <section class="filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Landscape</button>
+        <button class="filter-btn">Portrait</button>
+        <button class="filter-btn">Product</button>
+    </section>
+
+    <div class="gallery">
+        <img src="Gambar1.jpg" alt="Photo 1">
+        <img src="Gambar2.jpg" alt="Photo 2">
+        <img src="Gambar3.jpg" alt="Photo 3">
+        <img src="Gambar4.jpg" alt="Photo 4">
+        <img src="Gambar4.jpg" alt="Photo 5">
+        <img src="Gambar3.jpg" alt="Photo 6">
+        <img src="Gambar2.jpg" alt="Photo 7">
+        <img src="Gambar1.jpg" alt="Photo 8">
+        <img src="Gambar2.jpg" alt="Photo 9">
+        <img src="Gambar1.jpg" alt="Photo 10">
+        <img src="Gambar4.jpg" alt="Photo 11">
+        <img src="Gambar3.jpg" alt="Photo 12">
+        <img src="Gambar3.jpg" alt="Photo 13">
+        <img src="Gambar4.jpg" alt="Photo 14">
+        <img src="Gambar1.jpg" alt="Photo 15">
+        <img src="Gambar2.jpg" alt="Photo 16">
+    </div>
+
+    <footer class="footer">
+        <h3>JPhotography</h3>
+        <p>&copy; Copyrights 2025. All Rights Reserved</p>
+        <div class="social">
+            <i class="fa-brands fa-dribbble"></i>
+            <i class="fa-brands fa-behance"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-500px"></i>
+            <i class="fa-brands fa-flickr"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+        </div>
+    </footer>
+</body>
+</html>
